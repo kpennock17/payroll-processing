@@ -1,28 +1,10 @@
 let employees = [
-    {name:"Polo",hourlyRate:"Clothes",hoursWorked:"60"},
-    {name:"Polo",hourlyRate:"Clothes",hoursWorked:"60"},
-    {name:"Polo",hourlyRate:"Clothes",hoursWorked:"60"},
+    {name:"Esther",hourlyRate:"20",hoursWorked:"50"},
+    {name:"Alejandra",hourlyRate:"17",hoursWorked:"40"},
+    {name:"Mauro",hourlyRate:"40",hoursWorked:"80"},
 ];
 
-function calculateBasePay(20,40)
-
-
-
-
-
-
-const prices = [12,3,12,33];
-const dicounted = prices.map(prices => prices *0.9)
-
-const greeting = {
-    silly:"Hello There",
-    fansy:"Bonjour",
-    
-    function customeGreetings (fansy,silly){
-    return 
+function calculateBasePay(rate,hours) {
+    return rate * hours 
 }
-
-
-function calculateShipping(weight) {
-    return weight * 2.5;
-}
+console.log(calculateBasePay(30,40))

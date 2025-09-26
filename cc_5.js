@@ -1,10 +1,31 @@
+//step2
 let employees = [
     {name:"Esther",hourlyRate:"20",hoursWorked:"50"},
     {name:"Alejandra",hourlyRate:"17",hoursWorked:"40"},
     {name:"Mauro",hourlyRate:"40",hoursWorked:"80"},
 ];
-
+//step 3
+// I tried to make the hours custom but since assigment said 40 hour limit I did 40
 function calculateBasePay(rate,hours) {
-    return rate * hours 
+    return rate * 40;
 }
-console.log(calculateBasePay(30,40))
+employees.forEach(emp => {
+  let basePay = calculateBasePay(emp.hourlyRate, emp.hoursWorked);
+  console.log(`${emp.name}'s base pay: $${basePay}`);
+});
+//step 4
+
+console.log("------------------------------------------------------");
+
+function calculateOvertimePay(rate, hours) {
+  if (hours > 40) {
+    let overtimeHours = hours - 40;
+    return overtimeHours * rate * 1.5;}
+    return 0; 
+}
+employees.forEach(emp2 => {
+  let overtimePay = calculateOvertimePay(emp2.hourlyRate, emp2.hoursWorked);
+  console.log(`${emp2.name}'s overtime pay is: $${overtimePay}`);
+});
+//step 5
+

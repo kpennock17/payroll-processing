@@ -1,8 +1,8 @@
 //step2
 let employees = [
-    {name:"Esther",hourlyRate:"20",hoursWorked:"50"},
-    {name:"Alejandra",hourlyRate:"17",hoursWorked:"40"},
-    {name:"Mauro",hourlyRate:"40",hoursWorked:"80"},
+    {name:"Esther",hourlyRate:20, hoursWorked:50},
+    {name:"Alejandra",hourlyRate:17, hoursWorked:40},
+    {name:"Mauro",hourlyRate:40, hoursWorked:80},
 ];
 //step 3
 // I tried to make the hours custom but since assigment said 40 hour limit I did 40
@@ -29,3 +29,15 @@ employees.forEach(emp2 => {
 });
 //step 5
 
+console.log("------------------------------------------------------");
+
+function calculateTaxes(grossPay){
+    return grossPay * .15
+}
+employees.forEach(emp3 => {
+  let basePay = calculateBasePay(emp3.hourlyRate, emp3.hoursWorked);
+  let overtimePay = calculateOvertimePay(emp3.hourlyRate, emp3.hoursWorked);
+  let grossPay = basePay + overtimePay;
+  let taxDeduction = calculateTaxes(grossPay);
+  console.log(`${emp3.name}'s tax deduction is: $${taxDeduction}`);
+});

@@ -41,3 +41,29 @@ employees.forEach(emp3 => {
   let taxDeduction = calculateTaxes(grossPay);
   console.log(`${emp3.name}'s tax deduction is: $${taxDeduction}`);
 });
+//step 6
+console.log("------------------------------------------------------");
+
+function processPayroll(employee) {
+    let basePay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
+    let overtimePay = calculateOvertimePay(employee.hourlyRate, employee.hoursWorked);
+    let grossPay = basePay + overtimePay;
+    let taxDeduction = calculateTaxes(grossPay);
+    let netPay = grossPay - taxDeduction 
+   return {
+        name: employee.name,
+        basePay:(basePay),
+        overtimePay:(overtimePay),
+        grossPay:(grossPay),
+        netPay:(netPay)
+    };
+};
+const singleEmployee = employees[0];
+const payrollResult = processPayroll(singleEmployee);
+console.log(`${payrollResult.name}'s Payroll:
+  Base Pay: $${payrollResult.basePay}
+  Overtime Pay: $${payrollResult.overtimePay}
+  Gross Pay: $${payrollResult.grossPay}
+  Tax Deduction: $${payrollResult.taxDeduction}
+  Net Pay: $${payrollResult.netPay}`);
+  //step 7

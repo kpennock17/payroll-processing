@@ -11,11 +11,11 @@ function calculateBasePay(rate,hours) {
 }
 employees.forEach(emp => {
   let basePay = calculateBasePay(emp.hourlyRate, emp.hoursWorked);
-  console.log(`${emp.name}'s base pay: $${basePay}`);
+  //console.log(`${emp.name}'s base pay: $${basePay}`);
 });
 //step 4
 
-console.log("------------------------------------------------------");
+
 
 function calculateOvertimePay(rate, hours) {
   if (hours > 40) {
@@ -25,11 +25,11 @@ function calculateOvertimePay(rate, hours) {
 }
 employees.forEach(emp2 => {
   let overtimePay = calculateOvertimePay(emp2.hourlyRate, emp2.hoursWorked);
-  console.log(`${emp2.name}'s overtime pay is: $${overtimePay}`);
+  //console.log(`${emp2.name}'s overtime pay is: $${overtimePay}`);
 });
 //step 5
 
-console.log("------------------------------------------------------");
+
 
 function calculateTaxes(grossPay){
     return grossPay * .15
@@ -39,10 +39,10 @@ employees.forEach(emp3 => {
   let overtimePay = calculateOvertimePay(emp3.hourlyRate, emp3.hoursWorked);
   let grossPay = basePay + overtimePay;
   let taxDeduction = calculateTaxes(grossPay);
-  console.log(`${emp3.name}'s tax deduction is: $${taxDeduction}`);
+  //console.log(`${emp3.name}'s tax deduction is: $${taxDeduction}`);
 });
 //step 6
-console.log("------------------------------------------------------");
+
 
 function processPayroll(employee) {
     let basePay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
@@ -60,10 +60,18 @@ function processPayroll(employee) {
 };
 const singleEmployee = employees[0];
 const payrollResult = processPayroll(singleEmployee);
-console.log(`${payrollResult.name}'s Payroll:
+//console.log(`${payrollResult.name}'s Payroll:
+//  Base Pay: $${payrollResult.basePay}
+//  Overtime Pay: $${payrollResult.overtimePay}
+//  Gross Pay: $${payrollResult.grossPay}
+//  Net Pay: $${payrollResult.netPay}`);
+
+//step 7
+employees.forEach(employee => {
+    const payrollResult = processPayroll(employee);
+    console.log(`${payrollResult.name}'s Payroll:
   Base Pay: $${payrollResult.basePay}
   Overtime Pay: $${payrollResult.overtimePay}
   Gross Pay: $${payrollResult.grossPay}
-  Tax Deduction: $${payrollResult.taxDeduction}
   Net Pay: $${payrollResult.netPay}`);
-  //step 7
+  });
